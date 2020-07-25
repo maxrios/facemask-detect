@@ -1,0 +1,24 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}Django Website{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  </head>
+  <body class='text-center'>
+    <div>
+      <video autoplay='true' id='videoElement' class='flip' style="padding: 0 0 0 0;"></video>
+    </div>
+    <div>
+      <img id='screenshot-img' class='flip' src="" > 
+      <canvas style='display: none;'></canvas>
+    </div>
+    <button id='screenshot-button' onclick="snap()">Take Screenshot</button>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+    <script src="{% static 'js/webcam.js' %}"></script>
+    <script src="{% static 'js/screenshot.js' %}"></script>
+  </body>
+</html>
