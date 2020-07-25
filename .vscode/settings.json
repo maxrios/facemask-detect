@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "C:\\Users\\Rajashow\\anaconda3\\envs\\face\\python.exe"
+    "python.pythonPath": "C:\\Users\\Rajashow\\anaconda3\\envs\\face\\python.exe",
+    "python.formatting.provider": "black"
 }
