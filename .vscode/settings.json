@@ -1,3 +1,8 @@
 {
+<<<<<<< HEAD
     "python.pythonPath": "venv/bin/python"
+=======
+    "python.pythonPath": "C:\\Users\\Rajashow\\anaconda3\\envs\\face\\python.exe",
+    "python.formatting.provider": "black"
+>>>>>>> c9207860e846d65acce8e261ce99b6827f07a590
 }
