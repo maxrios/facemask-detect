@@ -4,13 +4,14 @@ var canvas = document.createElement('canvas');
 
 function start() {
 
-    setTimeout(function() {
+    setTimeout(function () {
         snap();
 
-      // Again
-      start();
+        // Again
 
-      // Every 3 sec
+        // start();
+        console.log("make this run more than once plssssszzzzz")
+        // Every 3 sec
     }, 1000);
 }
 
@@ -26,12 +27,17 @@ function snap() {
     $.ajax({
         type: "POST",
         url: window.location.toString(),
-        // csrfmiddlewaretoken: '{{ csrf_token }}',
-        data: { data: pic}
-        })
-            .done(function( msg ) {
-            // alert( "Data Saved: " + msg );
+        data: pic
+    })
+        .done(function (msg) {
+            if (msg = "no_mask") {
+                document.body.style.backgroundColor = "red"
+            } else if (msg = "mask") {
+                document.body.style.backgroundColor = "green"
+            } else {
+                document.body.style.backgroundColor = "yellow"
+            }
+            console.log(typeof msg)
+            console.log(msg);
         });
 };
-
-
