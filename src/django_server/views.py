@@ -53,7 +53,7 @@ import re
 
 
 @csrf_exempt
-def test(request):
+def camera_validate_view(request):
     if request.method == "POST":
         if request.is_ajax():
             image_data = unquote(request.body.decode())
@@ -63,4 +63,7 @@ def test(request):
             preds = get_prediction(image_data_trim, PROJECT_ID, MODEL_ID)
             print(preds)
 
-    return render(request, "camera.html", {})
+    return render(request, 'camera.html', {})
+
+def transcribe_view(request):
+    return render(request, 'microphone.html', {})
