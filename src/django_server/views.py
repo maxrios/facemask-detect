@@ -11,7 +11,7 @@ PROJECT_ID = ""
 
 
 @csrf_exempt
-def test(request):
+def camera_validate_view(request):
     if request.method == "POST":
         if request.is_ajax():
             image_data = unquote(request.body.decode())
@@ -21,3 +21,6 @@ def test(request):
             image_data = base64.b64decode(image_data)
 
     return render(request, 'camera.html', {})
+
+def transcribe_view(request):
+    return render(request, 'microphone.html', {})
