@@ -1,6 +1,6 @@
 appdirs==1.4.3
-asgiref @ file:///home/conda/feedstock_root/build_artifacts/asgiref_1592528583041/work
-astroid @ file:///C:/ci/astroid_1592487315634/work
+asgiref 
+astroid
 attrs==19.3.0
 black==19.10b0
 cachetools==4.1.1
@@ -8,7 +8,7 @@ certifi==2020.6.20
 chardet==3.0.4
 click==7.1.2
 colorama==0.4.3
-Django @ file:///home/conda/feedstock_root/build_artifacts/django_1593616220789/work
+Django 
 google-api-core==1.22.0
 google-auth==1.19.2
 google-cloud-automl==1.0.1
@@ -26,17 +26,16 @@ pathspec==0.7.0
 protobuf==3.12.2
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
-PyAudio @ https://download.lfd.uci.edu/pythonlibs/w3jqiv8s/PyAudio-0.2.11-cp38-cp38-win_amd64.whl
-pylint @ file:///C:/ci/pylint_1592482039483/work
+pylint 
 pytz==2020.1
-regex @ file:///C:/ci/regex_1593419644658/work
+regex 
 requests==2.24.0
 rsa==4.6
 six==1.15.0
 sqlparse==0.3.1
-toml @ file:///tmp/build/80754af9/toml_1592853716807/work
+toml 
 typed-ast==1.4.1
-typing-extensions @ file:///tmp/build/80754af9/typing_extensions_1592847887441/work
+typing-extensions 
 urllib3==1.25.10
 wincertstore==0.2
 wrapt==1.11.2
