@@ -9,11 +9,11 @@
   </head>
   <body class='text-center'>
     <div>
-      <audio></audio>
+      <audio controls id='audioElement'></audio>
     </div>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
-    <script src="{% static 'js/webcam.js' %}"></script>
-    <script src="{% static 'js/screenshot.js' %}"></script>
+    <script src="{% static 'js/record.js' %}"></script>
+    {% comment %} <script src="{% static 'js/screenshot.js' %}"></script> {% endcomment %}
   </body>
 </html>

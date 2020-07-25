@@ -23,5 +23,9 @@ def camera_validate_view(request):
 
     return render(request, 'camera.html', {})
 
+@csrf_exempt
 def transcribe_view(request):
+    if request.method == "POST":
+        if request.is_ajax():
+            audio_data = request.body.decode()
     return render(request, 'microphone.html', {})
