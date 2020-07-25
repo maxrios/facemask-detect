@@ -6,8 +6,8 @@ from .third_party.get_mask_predict import get_prediction
 import re
 
 DATA_URL_PATTERN = re.compile('data=data:image/(png|jpeg);base64,(.*)$')
-MODEL_ID = ""
-PROJECT_ID = ""
+MODEL_ID = "ICN3966723492690264064"
+PROJECT_ID = "767032446048"
 
 
 @csrf_exempt
