@@ -255,3 +255,6 @@ def main():
             if not stream.last_transcript_was_final:
                 sys.stdout.write('\n')
             stream.new_stream = True
+
+if __name__ == '__main__':
+    main()
