@@ -1,4 +1,3 @@
-console.log("Video Loaded");
 var video = document.querySelector("#videoElement");
 
 if (navigator.mediaDevices.getUserMedia) {

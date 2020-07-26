@@ -48,8 +48,16 @@ def camera_validate_view(request):
             image_data_trim = IMG_DATA_URL_PATTERN.match(image_data).group(2)
             image_data_trim = base64.b64decode(image_data_trim)
             preds = get_prediction(image_data_trim, PROJECT_ID, MODEL_ID)
-            print(preds)
-            return HttpResponse(preds.payload._values[0].display_name)
+            print(str(preds))
+            preds = str(preds)
+            if '"mask"' in preds:
+                return HttpResponse('mask')
+            elif '"no_mask"' in preds:
+                return HttpResponse('no_mask')
+            # try:   
+            #     return HttpResponse(preds.payload._values[0].display_name)
+            # except:
+            #     return HttpResponse('Failed')
     return render(request, "camera.html", {})
 
 
