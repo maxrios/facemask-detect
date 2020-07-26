@@ -1,4 +1,4 @@
-var screenshotButton = document.querySelector('#screenshot-button');
+// var screenshotButton = document.querySelector('#screenshot-button');
 var img = document.querySelector('#screenshot-img');
 var canvas = document.createElement('canvas');
 
@@ -21,7 +21,7 @@ function snap() {
     canvas.getContext('2d').drawImage(video, 0, 0);
     // Other browsers will fall back to image/png
     var pic = canvas.toDataURL('image/jpg');
-    img.src = pic;
+    // img.src = pic;
     // pic = pic.replace(/^data:image\/(png|jpg);base64,/, "");
 
     $.ajax({
@@ -30,10 +30,12 @@ function snap() {
         data: pic
     })
         .done(function (msg) {
-            if (msg = "no_mask") {
-                document.body.style.backgroundColor = "red"
-            } else if (msg = "mask") {
-                document.body.style.backgroundColor = "green"
+            if (msg == "no_mask") {
+                video.className = 'flip border border-5 border-danger';
+                // document.body.style.backgroundColor = "red"
+            } else if (msg == "mask") {
+                video.className = 'flip border border-5 border-success'
+                // document.body.style.backgroundColor = "green"
             } else {
                 document.body.style.backgroundColor = "yellow"
             }

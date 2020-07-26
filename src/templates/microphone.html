@@ -1,19 +1,17 @@
+{% extends 'base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>{% block title %}Django Website{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-  </head>
-  <body class='text-center'>
-    <div>
-      <audio controls id='audioElement'></audio>
-    </div>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+{% block title %}Transcribe{% endblock %}
+
+{% block nav %}
+    <a class='nav-link' href="{% url 'home' %}">Home</a>
+    <a class='nav-link' href="{% url 'detect' %}">Detect</a>
+    <a class='nav-link active' href="{% url 'transcribe' %}">Transcribe</a>
+{% endblock %}
+
+{% block content %}
+  <div>
+    <audio controls id='audioElement'></audio>
     <script src="{% static 'js/record.js' %}"></script>
-    {% comment %} <script src="{% static 'js/screenshot.js' %}"></script> {% endcomment %}
-  </body>
-</html>
+  </div>
+{% endblock %}
