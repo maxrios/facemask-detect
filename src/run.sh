@@ -1,0 +1,1 @@
+sudo python3 manage.py runsslserver 0.0.0.0:80 --certificate  /etc/letsencrypt/live/cov-id.tech/fullchain.pem --key /etc/letsencrypt/live/cov-id.tech/privkey.pem
