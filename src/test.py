@@ -1,11 +1,12 @@
 from google.cloud import speech_v1
 from google.cloud.speech_v1 import enums
 import io
+import wave
 
 
-def sample_recognize(local_file_path):
+def sample_long_running_recognize(local_file_path):
     """
-    Transcribe a short audio file using synchronous speech recognition
+    Transcribe a long audio file using asynchronous speech recognition
 
     Args:
       local_file_path Path to local audio file, e.g. /path/audio.wav
@@ -19,8 +20,9 @@ def sample_recognize(local_file_path):
     language_code = "en-US"
 
     # Sample rate in Hertz of the audio data sent
-    sample_rate_hertz = 16000
-
+    sample_rate_hertz = 44100
+    with wave.open(local_file_path, "rb") as wave_file:
+        sample_rate_hertz = wave_file.getframerate()
     # Encoding of audio data sent. This sample sets this explicitly.
     # This field is optional for FLAC and WAV audio formats.
     encoding = enums.RecognitionConfig.AudioEncoding.LINEAR16
@@ -33,12 +35,15 @@ def sample_recognize(local_file_path):
         content = f.read()
     audio = {"content": content}
 
-    response = client.recognize(config, audio)
+    operation = client.long_running_recognize(config, audio)
+
+    print(u"Waiting for operation to complete...")
+    response = operation.result()
+    print("thoughts")
     for result in response.results:
         # First alternative is the most probable result
         alternative = result.alternatives[0]
         print(u"Transcript: {}".format(alternative.transcript))
-    print("found none")
 
 
-sample_recognize("test.wav")
+sample_long_running_recognize("OSR_us_000_0010_8k.wav")
