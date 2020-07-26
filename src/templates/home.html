@@ -5,9 +5,13 @@
 {% block nav %}
     <a class='nav-link active' href="{% url 'home' %}">Home</a>
     <a class='nav-link' href="{% url 'detect' %}">Detect</a>
-    <a class='nav-link' href="#">Transcribe</a>
+    <a class='nav-link' href="{% url 'transcribe' %}">Transcribe</a>
 {% endblock %}
 
 {% block content %}
-
+    <p class='lead'>Our goal is to provide useful tools to help small businesses during the pandemic.</p>
+    <hr>
+    <p class='lead'>The first tool is a mask detection tool that can be easily hooked up to a camera (demo).</p>
+    <hr>
+    <p class='lead'>The second tool will be an audio transcriber for wearers not able to understand voices behind a mask (in progress).</p>
 {% endblock %}

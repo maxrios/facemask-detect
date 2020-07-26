@@ -25,8 +25,7 @@ SECRET_KEY = 'r2e27=&$!9(jeosgkzxg(-i)s1be+4g!s+sq8i5pchcxmnun3!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['35.196.11.140', 'cov-id.tech']
-
+ALLOWED_HOSTS = ['35.196.11.140', 'cov-id.tech', 'localhost']
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SECURE_SSL_REDIRECT = True

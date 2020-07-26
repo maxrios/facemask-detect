@@ -6,13 +6,12 @@
 {% block nav %}
     <a class='nav-link' href="{% url 'home' %}">Home</a>
     <a class='nav-link active' href="{% url 'detect' %}">Detect</a>
-    <a class='nav-link' href="#">Transcribe</a>
+    <a class='nav-link' href="{% url 'transcribe' %}">Transcribe</a>
 {% endblock %}
 
 {% block content %}
   <div>
-    <video autoplay='true' id='videoElement' class='flip border border-5 border-dark'></video>
-    <p>This is some text.</p>
+    <video autoplay='true' id='videoElement' class='flip border border-5 border-dark '></video>
   </div>
   {% comment %} <div>
     <img id='screenshot-img' class='flip' src="">
